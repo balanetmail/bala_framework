@@ -1,0 +1,24 @@
+<p>create-dynamic-form works!</p>
+
+
+<table class="mat-elevation-z8">
+    <tr >
+        <th *ngFor="let displayData of displayedColumns" > {{displayData}} </th>
+    </tr>
+    <tr *ngFor="let data of dataSource" >
+        <td *ngFor="let displayData of displayedColumns">
+            <div [ngSwitch]="displayData" style="text-align:right">
+                <div *ngSwitchCase="'key'">
+                    <div>Display element</div>
+                </div>
+                <div *ngSwitchCase="'mandatory'">
+                    <mat-checkbox class="example-margin" [checked]="data.mandatory">Mandatory</mat-checkbox>
+                </div>
+                <div *ngSwitchCase="'defaultValue'">
+                    <input matInput value="{{data.defaultValue}}">
+                </div>
+                <div *ngSwitchDefault>{{ getData(data, displayData) }}</div>
+            </div>
+        </td>
+    </tr>
+</table>

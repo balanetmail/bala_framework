@@ -1,0 +1,9 @@
+{
+    "rootpath" : "",
+    "elements" : [{
+        "key" : "input",
+        "defaultValue" : "",
+        "class" : "",
+        "mandatory" : true
+    }]
+}
